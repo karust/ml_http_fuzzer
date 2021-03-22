@@ -1,5 +1,5 @@
 # ML HTTP Fuzzer
-HTTP Fuzzer backed with Machine Learning. The concept is shown on fuzzing of a server HTTP headers. More explanation to the idea can be found [here](./DOC).
+HTTP Fuzzer backed with Machine Learning. The concept is shown on fuzzing of a server HTTP headers. More explanation to the idea can be found [here](./DOC.md).
 
 ## Installation
 ```
