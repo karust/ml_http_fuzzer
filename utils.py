@@ -103,13 +103,18 @@ def translateSentence(model, sentence: str, srcLang, trgLang, device, maxLength)
     return [trgLang.itos[idx] for idx in outputs]
 
 
-def loadState(filename, model, optimizer):
-    checkpoint = torch.load(filename)
+def loadState(filename, model, device='cpu', optimizer=None):
+    checkpoint = torch.load(filename, map_location=torch.device(device))
     model.load_state_dict(checkpoint["model"])
-    optimizer.load_state_dict(checkpoint["optimizer"])
+    
+    if optimizer:
+        optimizer.load_state_dict(checkpoint["optimizer"])
+    else:
+        model.eval()
     
     
-def saveState(filename, model, optimizer):
+def saveState(filename, model, optimizer=None):
     torch.save({"model": model.state_dict(), 
-                "optimizer": optimizer.state_dict()}, 
+                "optimizer": optimizer.state_dict() if optimizer else None}, 
                 filename)
+    

@@ -169,5 +169,13 @@ Connection: close"""
 print(translateSentence(model, response1, sourceVocab, targetVocab, device, MAX_LEN))
 print(translateSentence(model, response2, sourceVocab, targetVocab, device, MAX_LEN))
 
-saveState("./save/request_model_2551_10.pth.tar", model, optimizer) 
-loadState("./save/model_save.pth.tar", model, optimizer)
+saveState("./save/request_model_2551_10_inf.pth.tar", model) 
+loadState("./save/response_model_2551_10_inf.pth.tar", model, optimizer)
+
+
+import pickle
+with open("./save/srcVocab.pcl", 'wb') as output:
+    pickle.dump(sourceVocab, output)
+
+with open("./save/trgVocab.pcl", 'wb') as output:
+    pickle.dump(targetVocab, output)
