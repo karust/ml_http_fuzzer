@@ -5,6 +5,11 @@ HTTP Fuzzer backed with Machine Learning. The concept is shown on fuzzing of a s
 ```
 pip3 install -r requirements.txt
 ```
+or
+```
+docker pull uranusq/ml_fuzz
+```
+
 ## Usage
 * Newline-separated URLs in file:
 ```
@@ -17,6 +22,11 @@ python main.py -u https://youtube.com -d
 ```
 Debug output also contains model predictions. Example output:
 ![image](https://user-images.githubusercontent.com/43439351/111935941-a1135d00-8ad5-11eb-8748-d8d29d750f64.png)
+
+* Docker usage:
+```
+docker run -it uranusq/ml_fuzz -u https://instagram.com -d
+```
 
 ## Project files
 * [`./data`](./data) - contains CSV datasets and Burp output
