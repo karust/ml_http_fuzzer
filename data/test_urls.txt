@@ -1,0 +1,8 @@
+google.com
+yandex.ru/
+https://instagram.com
+http://facebook.com
+https://youtube.com/
+http://10.165.12.78:8080/
+127.0.0.1
+twitter.com
